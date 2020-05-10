@@ -61,25 +61,35 @@ class uhf(object):
         else :
             return 0
     def reset(self):
+        """
+        Restart the rfid-module
+        :return: answer of rfid-module as string
+        """
         result = self.cmd(self.b_reset , True)
         if result != 0xbf :
             return self.status[result[3]]
         else :
             return self.status[result]
-    def identity_single_tag(self):
+    def identity_and_read_tag(self):
+        """
+        Identity and read tag.
+        :return: answer of rfid-module as binary array
+        """
         result = self.cmd(self.b_single_read , True)
         if result != 0xbf :
-            if result[3] == 0 and result[4] != 0 :
+            if result[3] == 0  :
                 return self.cmd(self.b_get_tag_data , True)
             else :
                 return 0
         else :
             return self.status[result]
     def get_version(self ):
+        """
+        Get Firmware Version
+        :return: value of rfid-module answer as binary array
+        """
         result = self.cmd(self.b_get_version , True)
         if result != 0xbf :
             return result
         else :
             return self.status[result]
-
-
