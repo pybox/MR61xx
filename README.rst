@@ -11,9 +11,8 @@ Usage Code :
 To import this library in your code. First, download and copy uhf.py file in your main-code directory.
 
 ```python
-  from uhf import uhf
-  import serial 
-  sr = serial.Serial('/dev/ttyUSB0' , 115200 , timeout=1)
-  rfid = uhf(sr)
-  print( rfid.get_version )
-```
+    from uhf import uhf
+    import serial 
+    sr = serial.Serial('/dev/ttyUSB0' , 115200 , timeout=1)
+    rfid = uhf(sr)
+    print( rfid.get_version )```
