@@ -8,7 +8,8 @@ pip install pyserial
  ```
 USAGE :
 ============
-> To import this library in your code.\n First, download and copy uhf.py file in your main-code directory.
+> To import this library in your code.
+> First, download and copy uhf.py file in your main-code directory.
 
 ```python
 from uhf import uhf
