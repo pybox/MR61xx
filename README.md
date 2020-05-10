@@ -43,4 +43,11 @@ while(1):
         print(str(count)+'  ' , end='')
         print(result[4:-1])
 ```
+```
+Result :
+
+1  b'\r\x00\xe2\x00\x00\x1bp\r\x02\x02!\x904\xc5'
+2  b'\r\x00\xe2\x00\x00\x1bp\r\x02\x02!\x904\xc5'
+3  b'\r\x00\xe2\x00\x00\x1bp\r\x02\x02!\x904\xc5'
+```
 
