@@ -76,7 +76,7 @@ class uhf(object):
         else :
             return self.status[result]
     def get_version(self ):
-        result = self.cmd(self.get_version , True)
+        result = self.cmd(self.b_get_version , True)
         if result != 0xbf :
             return result
         else :
