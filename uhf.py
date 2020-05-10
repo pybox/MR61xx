@@ -24,6 +24,7 @@ class uhf(object):
         self.b_reset = b'\x02\x21'
         self.b_get_tag_data = b'\x03\x41\x01'
         self.b_single_read = b'\x03\x80\x00'
+        self.b_get_version = b'\x02\x22'
     def calculate_checksum(self , packet : bytes) :
         """
         Calculate checksum for the pac
@@ -74,4 +75,11 @@ class uhf(object):
                 return 0
         else :
             return self.status[result]
+    def get_version(self ):
+        result = self.cmd(self.get_version , True)
+        if result != 0xbf :
+            return result
+        else :
+            return self.status[result]
+
 
