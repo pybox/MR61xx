@@ -41,7 +41,7 @@ while(1):
     if result[3] == 0 and result[4] != 0 :
         count+=1
         print(str(count)+'  ' , end='')
-        print(result[4:-1])
+        print(result[5:-1])
 ```
 ```
 Result :
