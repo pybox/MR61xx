@@ -8,9 +8,8 @@ pip install pyserial
  ```
 USAGE :
 ============
-> To import this library in your code.
-> First, download and copy uhf.py file in your main-code directory.
-
+> To import this library in your code. First, download and copy uhf.py file in your main-code directory.
+###Preparing rfid object
 ```python
 from uhf import uhf
 import serial 
@@ -33,3 +32,14 @@ net init ok.
 --Jump to main...
 
 ```
+###Identity and read tag :
+```python
+count = 0
+while(1):
+    result = rfid.identity_and_read_tag()
+    if result[3] == 0 and result[4] != 0 :
+        count+=1
+        print(str(count)+'  ' , end='')
+        print(result[4:-1])
+```
+
