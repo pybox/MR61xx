@@ -36,15 +36,15 @@ class uhf(object):
         for x in packet:
             checksum = checksum + int(x)
             if checksum > 255:
-                checksum = checksum.to_bytes(2 , 'big')[1]
+                checksum = checksum.to_bytes(2, 'big')[1]
         checksum = ((~checksum) + 1) & 0xff
         if checksum > 255:
-            checksum = checksum.to_bytes(2 , 'big')[1]
+            checksum = checksum.to_bytes(2, 'big')[1]
         if type(checksum) == int:
-            checksum = checksum.to_bytes(1 , 'big')
+            checksum = checksum.to_bytes(1, 'big')
         return checksum
 
-    def cmd(self , command , is_r):
+    def cmd(self, command , is_r):
         pack = self.head + command + self.calculate_checksum( self.head + command )
         self.Serial.flushInput()
         #self.Serial.any()
@@ -80,10 +80,10 @@ class uhf(object):
             if result[3] == 0  :
                 return self.cmd(self.b_get_tag_data , True)
             else :
-                return 0
+                return self.status[result[3]]
         else :
             return self.status[result]
-    def get_version(self ):
+    def get_version(self):
         """
         Get Firmware Version
         :return: value of rfid-module answer as binary array
