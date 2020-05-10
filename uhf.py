@@ -1,6 +1,9 @@
+#!/usr/bin/python
+#created by Arian Qaragozlou
+
 import time
 class uhf(object):
-    def __init__(self , Serial):
+    def __init__(self, Serial):
         self.Serial = Serial
         self.status = {
             0x00 : "ERR_NONE",
