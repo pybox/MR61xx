@@ -4,7 +4,7 @@ MR61xx series is a kind of uhf rfid reader and writer witch can read uhf rfid ta
 Dependencies :
 ============
 .. code::
-    pip install pyserial
+pip install pyserial
  
 Usage Code :
 ============
