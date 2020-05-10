@@ -15,6 +15,6 @@ from uhf import uhf
 import serial 
 sr = serial.Serial('/dev/ttyUSB0' , 115200 , timeout=1)
 rfid = uhf(sr)
-print( rfid.get_version )
+print(rfid.get_version())
 ```
 
