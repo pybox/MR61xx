@@ -1,3 +1,4 @@
+import time
 class uhf(object):
     def __init__(self , Serial):
         self.Serial = Serial
@@ -67,7 +68,8 @@ class uhf(object):
         """
         result = self.cmd(self.b_reset , True)
         if result != 0xbf :
-            return self.status[result[3]]
+            time.sleep(1)
+            return self.Serial.read_all().decode()
         else :
             return self.status[result]
     def identity_and_read_tag(self):
